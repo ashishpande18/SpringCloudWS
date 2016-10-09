@@ -1,0 +1,48 @@
+package com.ashish.reservation;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class ReservationServiceApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(ReservationServiceApplication.class, args);
+	}
+}
+
+
+@Entity
+class Reservation {
+	
+	public Reservation(String reservationName) {
+		super();
+		this.reservationName = reservationName;
+	}
+
+
+	@Id
+	@GeneratedValue
+	private Long ID;
+	private String reservationName;
+	
+	public String getReservationName() {
+		return reservationName;
+	}
+
+
+	public void setReservationName(String reservationName) {
+		this.reservationName = reservationName;
+	}
+
+
+	public Long getID() {
+		return ID;
+	}
+	
+	
+}
